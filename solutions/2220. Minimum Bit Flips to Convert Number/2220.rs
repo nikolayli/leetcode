@@ -1,7 +1,7 @@
 // Time complexity: O(logn)
 // Space complexity: O(1)
 impl Solution {
-  pub fn min_bit_flips(start: i32, goal: i32) -> i32 {
-    (start ^ goal).count_ones() as i32
-  }
+    pub fn min_bit_flips(start: i32, goal: i32) -> i32 {
+        (start ^ goal).count_ones() as i32
+    }
 }

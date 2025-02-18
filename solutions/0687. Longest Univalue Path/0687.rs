@@ -1,7 +1,7 @@
 // Time complexity: O(n)
 // Space complexity: O(h)
-use std::rc::Rc;
 use std::cell::RefCell;
+use std::rc::Rc;
 impl Solution {
     pub fn longest_univalue_path(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
         let mut max = 0;
@@ -14,12 +14,20 @@ impl Solution {
             let node = node.borrow();
             let left = Self::dfs(node.left.as_ref(), max);
             let right = Self::dfs(node.right.as_ref(), max);
-            let left = if node.left.as_ref().map_or(false, |n| n.borrow().val == node.val) {
+            let left = if node
+                .left
+                .as_ref()
+                .map_or(false, |n| n.borrow().val == node.val)
+            {
                 left + 1
             } else {
                 0
             };
-            let right = if node.right.as_ref().map_or(false, |n| n.borrow().val == node.val) {
+            let right = if node
+                .right
+                .as_ref()
+                .map_or(false, |n| n.borrow().val == node.val)
+            {
                 right + 1
             } else {
                 0

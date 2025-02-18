@@ -10,7 +10,10 @@ impl Solution {
         let mut num_to_indices: HashMap<i64, Vec<usize>> = HashMap::new();
 
         for (i, num) in nums.iter().enumerate() {
-            num_to_indices.entry(*num as i64).or_insert(Vec::new()).push(i);
+            num_to_indices
+                .entry(*num as i64)
+                .or_insert(Vec::new())
+                .push(i);
         }
 
         for i in 0..n {

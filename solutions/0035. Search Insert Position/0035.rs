@@ -1,24 +1,24 @@
 // Time complexity: O(logn)
 // Space complexity: O(1)
 impl Solution {
-  pub fn search_insert(nums: Vec<i32>, target: i32) -> i32 {
-    let mut left = 0;
-    let mut right = nums.len();
+    pub fn search_insert(nums: Vec<i32>, target: i32) -> i32 {
+        let mut left = 0;
+        let mut right = nums.len();
 
-    while left < right {
-      let mid = left + (right - left) / 2;
+        while left < right {
+            let mid = left + (right - left) / 2;
 
-      if nums[mid] == target {
-        return mid as i32;
-      }
+            if nums[mid] == target {
+                return mid as i32;
+            }
 
-      if nums[mid] < target {
-        left = mid + 1; 
-      } else {
-        right = mid;
-      }
+            if nums[mid] < target {
+                left = mid + 1;
+            } else {
+                right = mid;
+            }
+        }
+
+        left as i32
     }
-
-    left as i32
-  }
 }

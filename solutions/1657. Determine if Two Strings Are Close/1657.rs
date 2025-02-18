@@ -8,8 +8,12 @@ impl Solution {
 
         let mut count1 = [0; 26];
         let mut count2 = [0; 26];
-        for c in word1.chars() { count1[c as usize - 0x61] += 1; };
-        for c in word2.chars() { count2[c as usize - 0x61] += 1; };
+        for c in word1.chars() {
+            count1[c as usize - 0x61] += 1;
+        }
+        for c in word2.chars() {
+            count2[c as usize - 0x61] += 1;
+        }
 
         for i in 0..26 {
             if (count1[i] == 0 && count2[i] != 0) || (count1[i] != 0 && count2[i] == 0) {

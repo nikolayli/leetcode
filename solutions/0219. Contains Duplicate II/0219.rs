@@ -10,12 +10,12 @@ impl Solution {
             if !seen.insert(num) {
                 return true;
             }
-            
+
             if i as i32 >= k {
                 seen.remove(&(nums[i as usize - k as usize]));
             }
         }
-        
+
         false
     }
 }

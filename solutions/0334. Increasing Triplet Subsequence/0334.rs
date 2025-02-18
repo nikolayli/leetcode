@@ -11,7 +11,7 @@ impl Solution {
             } else if num <= second {
                 second = num;
             } else {
-                return true
+                return true;
             }
         }
         false

@@ -11,8 +11,7 @@ impl Solution {
                 if j * j > i {
                     break;
                 }
-                dp[i as usize] = dp[i as usize]
-                                    .min(dp[(i - j * j) as usize] + 1);
+                dp[i as usize] = dp[i as usize].min(dp[(i - j * j) as usize] + 1);
             }
         }
 

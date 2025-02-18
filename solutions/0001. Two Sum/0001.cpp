@@ -7,8 +7,7 @@ class Solution {
 
     for (int i = 0; i < nums.size(); ++i) {
       auto it = numToIndex.find(target - nums[i]);
-      if (it != numToIndex.end())
-        return {it->second, i}; 
+      if (it != numToIndex.end()) return {it->second, i};
       numToIndex[nums[i]] = i;
     }
     throw;

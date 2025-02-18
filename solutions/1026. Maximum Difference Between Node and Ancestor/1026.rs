@@ -1,7 +1,7 @@
 // Time complexity: O(n)
 // Space complexity: O(h)
-use std::rc::Rc;
 use std::cell::RefCell;
+use std::rc::Rc;
 
 impl Solution {
     pub fn max_ancestor_diff(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
