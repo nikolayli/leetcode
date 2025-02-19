@@ -1,7 +1,9 @@
 # Time complexity: O(log min(m,n))
 # Space complexity: O(1)
 class Solution:
-    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+
+    def findMedianSortedArrays(self, nums1: List[int],
+                               nums2: List[int]) -> float:
         n1 = len(nums1)
         n2 = len(nums2)
         if n1 > n2:
@@ -18,7 +20,9 @@ class Solution:
             minRight1 = 2**31 - 1 if partition1 == n1 else nums1[partition1]
             minRight2 = 2**31 - 1 if partition2 == n2 else nums2[partition2]
             if maxLeft1 <= minRight2 and maxLeft2 <= minRight1:
-                return (max(maxLeft1, maxLeft2) + min(minRight1, minRight2)) * 0.5 if (n1 + n2) % 2 == 0 else max(maxLeft1, maxLeft2)
+                return (max(maxLeft1, maxLeft2) + min(minRight1, minRight2)
+                       ) * 0.5 if (n1 + n2) % 2 == 0 else max(
+                           maxLeft1, maxLeft2)
             elif maxLeft1 > minRight2:
                 r = partition1 - 1
             else:
