@@ -1,0 +1,27 @@
+name: Python CI
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+  
+    - name: Install Poetry
+      run: |
+        curl -sSL https://install.python-poetry.org | python3 -
+        echo "$HOME/.local/bin" >> $GITHUB_PATH
+   
+    - name: Install dependencies
+      run: poetry install
+
+    - name: Format code
+      run: poetry run yapf -d -r .
+    
+    - name: Run tests
+      run: poetry run pytest
