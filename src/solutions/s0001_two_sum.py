@@ -9,5 +9,5 @@ class Solution:
 
         for i, num in enumerate(nums):
             if target - num in numToIndex:
-                return numToIndex[target - num], i
+                return [numToIndex[target - num], i]
             numToIndex[num] = i
