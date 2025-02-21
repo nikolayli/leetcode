@@ -18,10 +18,10 @@ jobs:
         echo "$HOME/.local/bin" >> $GITHUB_PATH
    
     - name: Install dependencies
-      run: poetry install
+      run: poetry install --no-root
 
     - name: Format code
       run: poetry run yapf -d -r .
-    
+
     - name: Run tests
       run: poetry run pytest
