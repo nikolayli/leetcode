@@ -1,4 +1,5 @@
 #include <gtest/gtest.h>
+
 #include "../src/solutions/s0001_two_sum.cpp"
 
 TEST(TwoSumTest, TestCases) {
