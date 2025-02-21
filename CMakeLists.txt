@@ -5,7 +5,7 @@ project(leetcode)
 set(CMAKE_CXX_STANDARD 20)
 
 file(GLOB SOURCES "src/solutions/*.cpp")
-file(GLOB TEST_SORCES "tests/*.cpp")
+file(GLOB TEST_SOURCES "tests/*.cpp")
 
 add_executable(tests ${SOURCES} ${TEST_SOURCES})
 

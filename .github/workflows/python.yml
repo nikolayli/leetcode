@@ -21,7 +21,7 @@ jobs:
       run: poetry install --no-root
 
     - name: Format code
-      run: poetry run yapf -d -r .
+      run: poetry run yapf -d -r --exclude solutions . 
 
     - name: Run tests
       run: poetry run pytest
