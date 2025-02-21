@@ -16,7 +16,7 @@ jobs:
       run: sudo apt-get install -y clang-format
     
     - name: Format code
-      run: find . -name '*.cpp' | xargs clang-format -i && git diff --exit-code
+      run: find . -name solutions -prune -o -name '*.cpp' -print0 | xargs -0 clang-format -i && git diff --exit-code
 
     - name: Set up Cmake
       run: sudo apt-get install -y cmake
