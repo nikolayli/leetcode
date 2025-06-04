@@ -33,7 +33,8 @@ mod tests {
         };
     }
 
-    two_sum_test!(test1: [2, 7, 11, 15], 9 => vec![0, 1]);
-    two_sum_test!(test2: [2, 3, 4], 6 => vec![0, 2]);
-    two_sum_test!(test3: [3, 3], 6 => vec![0, 1]);
+    two_sum_test!(case1: [2, 7, 11, 15], 9 => vec![0, 1]);
+    two_sum_test!(case2: [2, 3, 4], 6 => vec![0, 2]);
+    two_sum_test!(case3: [3, 3], 6 => vec![0, 1]);
 }
+
