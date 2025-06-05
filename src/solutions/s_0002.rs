@@ -5,7 +5,10 @@ pub struct Solution;
 
 impl Solution {
     #[allow(dead_code)]
-    pub fn add_two_numbers(l1: Option<Box<ListNode>>, l2: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+    pub fn add_two_numbers(
+        l1: Option<Box<ListNode>>,
+        l2: Option<Box<ListNode>>,
+    ) -> Option<Box<ListNode>> {
         let mut dummy = ListNode::new(0);
         let mut curr = &mut dummy;
         let mut carry = 0;
@@ -13,7 +16,9 @@ impl Solution {
         let mut q = l2;
 
         while p.is_some() || q.is_some() || carry != 0 {
-            let sum = carry + p.as_ref().map_or(0, |node| node.val) + q.as_ref().map_or(0, |node| node.val);
+            let sum = carry
+                + p.as_ref().map_or(0, |node| node.val)
+                + q.as_ref().map_or(0, |node| node.val);
 
             carry = sum / 10;
             curr.next = Some(Box::new(ListNode::new(sum % 10)));
@@ -48,4 +53,3 @@ mod tests {
     add_two_numbers_test!(case2: ([0], [0]) => [0]);
     add_two_numbers_test!(case3: ([9, 9, 9, 9, 9, 9, 9], [9, 9, 9, 9]) => [8, 9, 9, 9, 0, 0, 0, 1]);
 }
-

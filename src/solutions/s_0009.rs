@@ -37,4 +37,3 @@ mod tests {
     is_palindrome_test!(case2: -121 => false);
     is_palindrome_test!(case3: 10 => false);
 }
-

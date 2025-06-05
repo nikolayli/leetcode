@@ -17,7 +17,7 @@ impl Solution {
                 l += 1;
             }
 
-            ans = std::cmp::max(ans, r- l + 1);
+            ans = std::cmp::max(ans, r - l + 1);
         }
 
         ans as i32
@@ -32,7 +32,10 @@ mod tests {
         ($name:ident: $input:expr => $expected:expr) => {
             #[test]
             fn $name() {
-                assert_eq!(Solution::length_of_longest_substring($input.to_string()), $expected);
+                assert_eq!(
+                    Solution::length_of_longest_substring($input.to_string()),
+                    $expected
+                );
             }
         };
     }
@@ -41,4 +44,3 @@ mod tests {
     length_of_longest_substring_test!(case2: "bbbbb" => 1);
     length_of_longest_substring_test!(case3: "pwwkew" => 3);
 }
-

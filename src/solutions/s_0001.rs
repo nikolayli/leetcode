@@ -37,4 +37,3 @@ mod tests {
     two_sum_test!(case2: [2, 3, 4], 6 => vec![0, 2]);
     two_sum_test!(case3: [3, 3], 6 => vec![0, 1]);
 }
-
