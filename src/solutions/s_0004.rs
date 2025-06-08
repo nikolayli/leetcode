@@ -13,7 +13,7 @@ impl Solution {
 
         let m = nums1_slice.len();
         let n = nums2_slice.len();
-        let total_left = (m + n + 1) / 2;
+        let total_left = (m + n).div_ceil(2);
 
         let (mut left, mut right) = (0, m);
         while left <= right {
