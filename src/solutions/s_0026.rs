@@ -26,10 +26,10 @@ mod tests {
     use super::*;
 
     macro_rules! remove_duplicates_test {
-        ($name:ident: $input:expr => ($expected_k:expr, $expected_nums:expr)) => {
+        ($name:ident: $nums:expr => ($expected_k:expr, $expected_nums:expr)) => {
             #[test]
             fn $name() {
-                let mut nums = Vec::from($input);
+                let mut nums = Vec::from($nums);
                 let k = Solution::remove_duplicates(&mut nums);
                 assert_eq!(k, $expected_k);
                 assert_eq!(&nums[..$expected_k as usize], $expected_nums);

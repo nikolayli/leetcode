@@ -13,10 +13,10 @@ mod tests {
     use super::*;
 
     macro_rules! length_of_last_word_test {
-        ($name:ident: $input:expr => $expected:expr) => {
+        ($name:ident: $s:expr => $expected:expr) => {
             #[test]
             fn $name() {
-                assert_eq!(Solution::length_of_last_word($input.to_string()), $expected);
+                assert_eq!(Solution::length_of_last_word($s.to_string()), $expected);
             }
         };
     }

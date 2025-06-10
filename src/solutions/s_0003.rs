@@ -29,11 +29,11 @@ mod tests {
     use super::*;
 
     macro_rules! length_of_longest_substring_test {
-        ($name:ident: $input:expr => $expected:expr) => {
+        ($name:ident: $s:expr => $expected:expr) => {
             #[test]
             fn $name() {
                 assert_eq!(
-                    Solution::length_of_longest_substring($input.to_string()),
+                    Solution::length_of_longest_substring($s.to_string()),
                     $expected
                 );
             }

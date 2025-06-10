@@ -42,11 +42,11 @@ mod tests {
     use super::*;
 
     macro_rules! longest_palindrome_test {
-        ($name:ident: $input:expr => $expected:expr) => {
+        ($name:ident: $s:expr => $expected:expr) => {
             #[test]
             fn $name() {
                 assert_eq!(
-                    Solution::longest_palindrome($input.to_string()),
+                    Solution::longest_palindrome($s.to_string()),
                     $expected.to_string()
                 );
             }
