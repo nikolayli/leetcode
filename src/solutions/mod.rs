@@ -4,6 +4,7 @@ mod s_0003;
 mod s_0004;
 mod s_0005;
 mod s_0006;
+mod s_0007;
 mod s_0009;
 mod s_0020;
 mod s_0026;
