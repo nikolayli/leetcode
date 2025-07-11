@@ -8,6 +8,7 @@ mod s_0007;
 mod s_0008;
 mod s_0009;
 mod s_0010;
+mod s_0011;
 mod s_0020;
 mod s_0026;
 mod s_0027;
