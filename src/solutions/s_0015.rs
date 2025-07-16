@@ -75,7 +75,7 @@ mod tests {
         };
     }
 
-    three_sum_test!(case1: [-1,0,1,2,-1,-4] => vec![vec![-1,-1,2], vec![-1,0,1]]);
-    three_sum_test!(case2: [0,1,1] => vec![]);
-    three_sum_test!(case3: [0,0,0] => vec![vec![0,0,0]]);
+    three_sum_test!(case1: [-1, 0, 1, 2, -1, -4] => vec![vec![-1, -1, 2], vec![-1, 0, 1]]);
+    three_sum_test!(case2: [0, 1, 1] => vec![]);
+    three_sum_test!(case3: [0, 0, 0] => vec![vec![0, 0, 0]]);
 }
