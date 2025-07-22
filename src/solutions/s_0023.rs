@@ -67,7 +67,8 @@ mod tests {
         ($name:ident: $lists:expr, $expected:expr) => {
             #[test]
             fn $name() {
-                let lists: Vec<Option<Box<ListNode>>> = $lists.into_iter().map(|arr| make_list(arr)).collect();
+                let lists: Vec<Option<Box<ListNode>>> =
+                    $lists.into_iter().map(|arr| make_list(arr)).collect();
                 let expected = make_list($expected);
                 assert_eq!(Solution::merge_k_lists(lists), expected);
             }

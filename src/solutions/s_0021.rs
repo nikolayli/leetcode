@@ -56,7 +56,7 @@ mod tests {
         };
     }
 
-   // merge_two_lists_test!(case1: (vec![1, 2, 4], vec![1, 3, 4]) => vec![1, 1, 2, 3, 4, 4]);
+    // merge_two_lists_test!(case1: (vec![1, 2, 4], vec![1, 3, 4]) => vec![1, 1, 2, 3, 4, 4]);
     merge_two_lists_test!(case2: (vec![], vec![]) => vec![]);
     merge_two_lists_test!(case3: (vec![], vec![0]) => vec![0]);
 }
