@@ -8,7 +8,7 @@ impl Solution {
             return vec![];
         }
 
-        let mapping = vec!["abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"];
+        let mapping = ["abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"];
 
         let mut ans = vec![String::new()];
 
@@ -18,7 +18,7 @@ impl Solution {
 
             for s in &ans {
                 for l in letters.chars() {
-                    temp.push(format!("{}{}", s, l));
+                    temp.push(format!("{s}{l}"));
                 }
             }
             ans = temp;

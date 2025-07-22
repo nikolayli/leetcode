@@ -28,10 +28,8 @@ impl Solution {
     pub fn merge_k_lists(lists: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>> {
         let mut heap = BinaryHeap::new();
 
-        for list in lists {
-            if let Some(node) = list {
-                heap.push(Reverse(Wrapper(node)));
-            }
+        for node in lists.into_iter().flatten() {
+            heap.push(Reverse(Wrapper(node)));
         }
 
         let mut dummy = Box::new(ListNode::new(0));
