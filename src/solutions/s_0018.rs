@@ -2,6 +2,7 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(dead_code)]
     pub fn four_sum(nums: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
         let n = nums.len();
         if n < 4 {

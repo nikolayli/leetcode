@@ -3,7 +3,7 @@ use crate::utils::linked_list::ListNode;
 #[allow(dead_code)]
 pub struct Solution;
 
-impl Solutions {
+impl Solution {
     #[allow(dead_code)]
     pub fn remove_nth_from_end(head: Option<Box<ListNode>>, n: i32) -> Option<Box<ListNode>> {
         let n = n as usize;
@@ -22,7 +22,7 @@ impl Solutions {
 
         let mut curr = dummy.as_mut();
         for _ in 0..target_index {
-            curr = curr.and_them(|node| node.next.as_mut());
+            curr = curr.and_then(|node| node.next.as_mut());
         }
 
         if let Some(node) = curr {
@@ -50,11 +50,11 @@ mod tests {
     }
 
     macro_rules! remove_nth_from_end_test {
-        ($name:ident: $head:expr, $n:expr => $expected:expr) => {
+        ($name:ident: [$($head:expr),*], $n:expr => [$($expected:expr),*]) => {
             #[test]
             fn $name() {
-                let head = list!$head;
-                let expected = list!$expected;
+                let head = list![$($head),*];
+                let expected = list![$($expected),*];
                 assert_eq!(Solution::remove_nth_from_end(head, $n), expected);
             }
         };

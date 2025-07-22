@@ -4,7 +4,7 @@ pub struct Solution;
 impl Solution {
     #[allow(dead_code)]
     pub fn letter_combinations(digits: String) -> Vec<String> {
-        if digit.is_empty() {
+        if digits.is_empty() {
             return vec![];
         }
 
@@ -35,7 +35,7 @@ mod tests {
         ($name:ident: $digits:expr => $expected:expr) => {
             #[test]
             fn $name() {
-                let mut ans = Solution::letter_combinations($digits);
+                let mut ans = Solution::letter_combinations($digits.to_string());
                 let mut expected: Vec<String> =
                     $expected.into_iter().map(|s| s.to_string()).collect();
                 ans.sort_unstable();
@@ -46,6 +46,6 @@ mod tests {
     }
 
     letter_combinations_test!(case1: "23" => vec!["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]);
-    letter_combinations_test!(case2: "" => vec![]);
+    letter_combinations_test!(case2: "" => Vec::<String>::new());
     letter_combinations_test!(case3: "2" => vec!["a", "b", "c"]);
 }
