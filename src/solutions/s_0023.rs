@@ -50,21 +50,15 @@ impl Solution {
 mod tests {
     use super::*;
 
-    fn make_list(values: &[i32]) -> Option<Box<ListNode>> {
-        let mut head = None;
-        for &val in values.iter().rev() {
-            head = Some(Box::new(ListNode { val, next: head }));
-        }
-        head
-    }
-
     macro_rules! merge_k_lists_test {
         ($name:ident: $lists:expr, $expected:expr) => {
             #[test]
             fn $name() {
-                let lists: Vec<Option<Box<ListNode>>> =
-                    $lists.into_iter().map(|arr| make_list(arr)).collect();
-                let expected = make_list($expected);
+                let lists: Vec<Option<Box<ListNode>>> = $lists
+                    .into_iter()
+                    .map(|arr| ListNode::from_slice(arr))
+                    .collect();
+                let expected = ListNode::from_slice($expected);
                 assert_eq!(Solution::merge_k_lists(lists), expected);
             }
         };

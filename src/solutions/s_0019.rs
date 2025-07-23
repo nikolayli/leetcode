@@ -36,16 +36,7 @@ impl Solution {
 #[cfg(test)]
 mod tests {
     use super::*;
-
-    macro_rules! list {
-        () => { None };
-        ($val:expr $(, $rest:expr)*) => {
-            Some(Box::new(ListNode {
-                val: $val,
-                next: list!($($rest),*)
-            }))
-        };
-    }
+    use crate::list;
 
     macro_rules! remove_nth_from_end_test {
         ($name:ident: [$($head:expr),*], $n:expr => [$($expected:expr),*]) => {

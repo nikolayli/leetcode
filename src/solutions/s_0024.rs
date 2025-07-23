@@ -27,40 +27,21 @@ impl Solution {
 #[cfg(test)]
 mod tests {
     use super::*;
-
-    fn to_list(vec: &[i32]) -> Option<Box<ListNode>> {
-        let mut curr = None;
-        for &val in vec.iter().rev() {
-            let mut node = ListNode::new(val);
-            node.next = curr;
-            curr = Some(Box::new(node));
-        }
-        curr
-    }
-
-    fn to_vec(head: Option<Box<ListNode>>) -> Vec<i32> {
-        let mut ans = Vec::new();
-        let mut curr = &head;
-        while let Some(node) = curr {
-            ans.push(node.val);
-            curr = &node.next;
-        }
-        ans
-    }
+    use crate::utils::linked_list::ListNode;
 
     macro_rules! swap_pairs_test {
-        ($name:ident: $heat:expr => $expected:expr) => {
+        ($name:ident: $head:expr => $expected:expr) => {
             #[test]
             fn $name() {
-                let heat = to_list($heat);
-                let ans = Solution::swap_pairs(heat);
-                assert_eq!(to_vec(ans), $expected);
+                let head = ListNode::from_slice($head);
+                let expected = ListNode::from_slice($expected);
+                assert_eq!(Solution::swap_pairs(head), expected);
             }
         };
     }
 
-    swap_pairs_test!(case1: &[1, 2, 3, 4] => vec![2, 1, 4, 3]);
-    swap_pairs_test!(case2: &[] => vec![]);
-    swap_pairs_test!(case3: &[1] => vec![1]);
-    swap_pairs_test!(case4: &[1, 2, 3] => vec![2, 1, 3]);
+    swap_pairs_test!(case1: &[1, 2, 3, 4] => &[2, 1, 4, 3]);
+    swap_pairs_test!(case2: &[] => &[]);
+    swap_pairs_test!(case3: &[1] => &[1]);
+    swap_pairs_test!(case4: &[1, 2, 3] => &[2, 1, 3]);
 }
