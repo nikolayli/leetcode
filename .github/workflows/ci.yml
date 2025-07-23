@@ -24,3 +24,44 @@ jobs:
       - name: Run clippy
         run: cargo clippy --all-targets --all-features -- -D warnings
 
+postgres:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:latest
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: testdb
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install PostgreSQL client
+        run: sudo apt-get update && sudo apt-get install -y postgresql-client
+
+      - name: Wait for PostgreSQL
+        run: |
+          for i in {1..10}; do
+            PGPASSWORD=postgres psql -h localhost -U postgres -d testdb -c 'SELECT 1;' && break
+            sleep 5
+          done
+
+      - name: Run PostgreSQL tests
+        env:
+          PGHOST: localhost
+          PGUSER: postgres
+          PGPASSWORD: postgres
+          PGDATABASE: testdb
+        run: |
+          for test_file in postgres/test_*.sql; do
+            echo "Running $test_file..."
+            psql -v ON_ERROR_STOP=1 -f "$test_file"
+          done
