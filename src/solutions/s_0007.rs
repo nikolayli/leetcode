@@ -1,8 +1,6 @@
-#[allow(dead_code)]
-pub struct Solution;
+struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
     pub fn reverse(x: i32) -> i32 {
         let mut x = x;
         let mut ans: i32 = 0;

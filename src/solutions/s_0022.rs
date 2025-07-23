@@ -1,8 +1,6 @@
-#[allow(dead_code)]
-pub struct Solution;
+struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
     pub fn generate_parenthesis(n: i32) -> Vec<String> {
         let mut ans = Vec::new();
         let mut curr = String::with_capacity((2 * n) as usize);

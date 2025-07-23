@@ -1,8 +1,6 @@
-#[allow(dead_code)]
-pub struct Solution;
+struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
     pub fn convert(s: String, num_rows: i32) -> String {
         if num_rows == 1 {
             return s;

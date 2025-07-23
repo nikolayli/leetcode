@@ -1,8 +1,6 @@
-#[allow(dead_code)]
-pub struct Solution;
+struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
     pub fn int_to_roman(num: i32) -> String {
         let mut num = num;
         let values = [

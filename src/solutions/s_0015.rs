@@ -1,8 +1,6 @@
-#[allow(dead_code)]
-pub struct Solution;
+struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
     pub fn three_sum(mut nums: Vec<i32>) -> Vec<Vec<i32>> {
         let n = nums.len();
         if n < 3 {

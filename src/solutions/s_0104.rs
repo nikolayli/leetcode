@@ -2,11 +2,9 @@ use crate::utils::binary_tree::TreeNode;
 use std::cell::RefCell;
 use std::rc::Rc;
 
-#[allow(dead_code)]
-pub struct Solution;
+struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
     pub fn max_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
         match root {
             None => 0,

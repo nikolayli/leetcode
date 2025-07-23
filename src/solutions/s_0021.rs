@@ -1,10 +1,8 @@
 use crate::utils::linked_list::ListNode;
 
-#[allow(dead_code)]
-pub struct Solution;
+struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
     pub fn merge_two_lists(
         mut list1: Option<Box<ListNode>>,
         mut list2: Option<Box<ListNode>>,
@@ -56,7 +54,7 @@ mod tests {
         };
     }
 
-    // merge_two_lists_test!(case1: (vec![1, 2, 4], vec![1, 3, 4]) => vec![1, 1, 2, 3, 4, 4]);
+    merge_two_lists_test!(case1: (vec![1, 2, 4], vec![1, 3, 4]) => vec![1, 1, 2, 3, 4, 4]);
     merge_two_lists_test!(case2: (vec![], vec![]) => vec![]);
     merge_two_lists_test!(case3: (vec![], vec![0]) => vec![0]);
 }

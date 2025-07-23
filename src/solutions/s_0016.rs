@@ -1,10 +1,8 @@
 use std::cmp::Ordering;
 
-#[allow(dead_code)]
-pub struct Solution;
+struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
     pub fn three_sum_closest(nums: Vec<i32>, target: i32) -> i32 {
         let n = nums.len();
         let mut nums = nums;

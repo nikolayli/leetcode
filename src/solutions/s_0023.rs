@@ -4,7 +4,6 @@ use std::collections::BinaryHeap;
 
 use crate::utils::linked_list::ListNode;
 
-#[allow(dead_code)]
 #[derive(PartialEq, Eq)]
 struct Wrapper(Box<ListNode>);
 
@@ -20,11 +19,9 @@ impl Ord for Wrapper {
     }
 }
 
-#[allow(dead_code)]
-pub struct Solution;
+struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
     pub fn merge_k_lists(lists: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>> {
         let mut heap = BinaryHeap::new();
 

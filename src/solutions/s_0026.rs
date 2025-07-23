@@ -1,8 +1,6 @@
-#[allow(dead_code)]
-pub struct Solution;
+struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
     pub fn remove_duplicates(nums: &mut [i32]) -> i32 {
         if nums.is_empty() {
             return 0;

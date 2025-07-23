@@ -1,10 +1,8 @@
 use crate::utils::linked_list::ListNode;
 
-#[allow(dead_code)]
-pub struct Solution;
+struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
     pub fn swap_pairs(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         let mut dummy = ListNode::new(0);
         dummy.next = head;

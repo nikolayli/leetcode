@@ -1,8 +1,6 @@
-#[allow(dead_code)]
-pub struct Solution;
+struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
     pub fn letter_combinations(digits: String) -> Vec<String> {
         if digits.is_empty() {
             return vec![];

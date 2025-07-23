@@ -1,8 +1,6 @@
-#[allow(dead_code)]
-pub struct Solution;
+struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
     pub fn my_atoi(s: String) -> i32 {
         let mut iter = s.chars().peekable();
 

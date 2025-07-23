@@ -1,8 +1,6 @@
-#[allow(dead_code)]
-pub struct Solution;
+struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
     pub fn is_valid(s: String) -> bool {
         let mut stack = Vec::new();
         for c in s.chars() {
